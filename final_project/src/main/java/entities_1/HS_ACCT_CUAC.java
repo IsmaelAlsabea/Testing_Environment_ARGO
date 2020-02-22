@@ -25,23 +25,6 @@ public class HS_ACCT_CUAC {
 
 	
 	public HS_ACCT_CUAC() {}
-	
-	
-	
-	public HS_ACCT_CUAC(String cUSTBANK, String tYPECUST, String cIF, String nUMBANK, String tYPEACCT, String nUMACCT,
-			String rELATION, String cODEOWNR, String sTATE2, String rELATN4) {
-		super();
-		CUSTBANK = cUSTBANK;
-		TYPECUST = tYPECUST;
-		CIF = cIF;
-		NUMBANK = nUMBANK;
-		TYPEACCT = tYPEACCT;
-		NUMACCT = nUMACCT;
-		RELATION = rELATION;
-		CODEOWNR = cODEOWNR;
-		STATE2 = sTATE2;
-		RELATN4 = rELATN4;
-	}
 
 
 
