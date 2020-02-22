@@ -32,30 +32,6 @@ public class HS_ACCT_HOLD {
 	
 	
 	public HS_ACCT_HOLD() {}
-	
-	
-	
-	public HS_ACCT_HOLD(String nUMBANK, String tYPEACCT, String nUMACCT, String iDHOLD, String oFFID, String hOLDTXT,
-			String aMTHOLD, Timestamp dATEEXPR, Timestamp dATEADDED, String nUMBRNCH, String oPERID, String dESCCODE,
-			String dATEDEP, String rSNHOLD) {
-		super();
-		NUMBANK = nUMBANK;
-		TYPEACCT = tYPEACCT;
-		NUMACCT = nUMACCT;
-		IDHOLD = iDHOLD;
-		OFFID = oFFID;
-		HOLDTXT = hOLDTXT;
-		AMTHOLD = aMTHOLD;
-		DATEEXPR = dATEEXPR;
-		DATEADDED = dATEADDED;
-		NUMBRNCH = nUMBRNCH;
-		OPERID = oPERID;
-		DESCCODE = dESCCODE;
-		DATEDEP = dATEDEP;
-		RSNHOLD = rSNHOLD;
-	}
-
-
 
 	public String getNUMBANK() {
 		return NUMBANK;
