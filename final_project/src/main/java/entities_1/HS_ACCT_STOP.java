@@ -32,28 +32,6 @@ public class HS_ACCT_STOP {
 	
 	public HS_ACCT_STOP() {}
 	
-	
-	public HS_ACCT_STOP(String nUMBANK, String tYPEACCT, String nUMACCT, String iDSTOP, String nUMBEG, String nUMEND,
-			String aMTCHECK, Timestamp dATEEXPR, Timestamp dATECRTD, String oPERID, String nAMPAYTO, String sTOPREAS,
-			String rEGIONID, Timestamp dATECHK, String oFFID) {
-		super();
-		NUMBANK = nUMBANK;
-		TYPEACCT = tYPEACCT;
-		NUMACCT = nUMACCT;
-		IDSTOP = iDSTOP;
-		NUMBEG = nUMBEG;
-		NUMEND = nUMEND;
-		AMTCHECK = aMTCHECK;
-		DATEEXPR = dATEEXPR;
-		DATECRTD = dATECRTD;
-		OPERID = oPERID;
-		NAMPAYTO = nAMPAYTO;
-		STOPREAS = sTOPREAS;
-		REGIONID = rEGIONID;
-		DATECHK = dATECHK;
-		OFFID = oFFID;
-	}
-
 
 	public String getNUMBANK() {
 		return NUMBANK;
