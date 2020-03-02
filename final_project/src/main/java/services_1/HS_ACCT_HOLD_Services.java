@@ -1,40 +1,129 @@
-package services_1;
+package services_1.impl;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import entities_1.HS_ACCT_HOLD;
+import services_1.HS_ACCT_HOLD_Services;
 import utils.DAOException;
 
-public interface HS_ACCT_HOLD_Services {
+public class HS_ACCT_HOLD_Services_Impl implements HS_ACCT_HOLD_Services {
 
-	/* 
-	@Id private String 		NUMBANK;  //no		char 3
-	@Id private String 		TYPEACCT;  //yes	 //char 3
-	@Id private String 		NUMACCT;  //yes		char 19
-	@Id private String 		IDHOLD; //yes		char 20 
+    @PersistenceContext
+    private EntityManager em;
 
-	 */
-	/*
-	i.	Customer Type (drop down built on the records in the database)
-	ii.	State (drop down built on the records in the database)
-	iii.	Zip Code
-	iv.	Tax ID Number
-	v.	Last Name
-	 */
-	
-	
-    void create(HS_ACCT_HOLD acct) throws DAOException;
+    /*
+        Default constructor
+    */
 
-    void update(HS_ACCT_HOLD acct) throws DAOException;
-
-    void delete(String NUMBANK,  String TYPEACCT,String NUMACCT, String IDHOLD) throws DAOException;
-
-    List<HS_ACCT_HOLD> retrieveByTYPEACCT(String TYPEACCT) throws DAOException;  //char 3  //customer type
+    public HS_ACCT_HOLD_Services_Impl(EntityManager em) {
+            super();
+            this.em = em;
+    }
     
-    List<HS_ACCT_HOLD> retrieveByNUMACCT(String NUMACCT) throws DAOException;	//char 19  //account numbers
+    /*
+        Create HS_ACCT_HOLD Account
+    */
+
+    public void create(HS_ACCT_HOLD acct) throws DAOException {
+        
+        EntityTransaction et = em.getTransaction();
+        
+        try {
+            et.begin();
+            em.persist(acct);
+            et.commit();
+        } 
+        catch (Exception e) {
+            et.rollback();
+        }
+
+    }
     
-    List<HS_ACCT_HOLD> retrieveByIDHOLD(String IDHOLD) throws DAOException;  //char 20 
+    /*
+        Update HS_ACCT_HOLD Account
+    */
+
+    public void update(HS_ACCT_HOLD acct) throws DAOException {
+        
+        try {
+            em.getTransaction().begin();
+            em.merge(acct);
+            em.getTransaction().commit();
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+            em.getTransaction().rollback();
+        }
+
+    }
     
-    Long count() throws DAOException;
-	
+    /*
+        Delete HS_ACCT_HOLD Account
+    */
+
+    public void delete(String NUMBANK, String TYPEACCT, String NUMACCT, 
+                       String IDHOLD) throws DAOException {
+        
+        try {
+            em.getTransaction().begin();
+
+            Query q = em
+                        .createQuery("DELETE FROM HS_ACCT_HOLD AS g WHERE "
+                                   + "g.NUMBANK = :nb "
+                                   + "AND g.TYPEACCT = :tacct "
+                                   + "AND g.NUMACCT = :nacct "
+                                   + "AND g.IDHOLD = :idh")        
+                        .setParameter("nb", NUMBANK)
+                        .setParameter("tacct", TYPEACCT)
+                        .setParameter("nacct", NUMACCT)
+                        .setParameter("idh", IDHOLD);
+
+             q.executeUpdate();
+             em.getTransaction().commit();
+        } 
+        catch (Exception ex) {
+            ex.printStackTrace();
+            em.getTransaction().rollback();
+        }
+
+    }
+    
+    /*
+        Retrieve HS_ACCT_HOLD Accounts
+    */
+
+    public List<HS_ACCT_HOLD> retrieveByTYPEACCT(String TYPEACCT) throws DAOException {
+            
+        return em.createQuery("SELECT g FROM HS_ACCT_HOLD g "
+                            + "WHERE TYPEACCT = :r", HS_ACCT_HOLD.class)
+                            .setParameter("r", TYPEACCT).getResultList();
+    }
+
+    public List<HS_ACCT_HOLD> retrieveByNUMACCT(String NUMACCT) throws DAOException {
+            
+        return em.createQuery("SELECT g FROM HS_ACCT_HOLD g "
+                            + "WHERE NUMACCT = :r", HS_ACCT_HOLD.class)
+                            .setParameter("r", NUMACCT).getResultList();
+    }
+
+    public List<HS_ACCT_HOLD> retrieveByIDHOLD(String IDHOLD) throws DAOException {
+            
+        return em.createQuery("SELECT g FROM HS_ACCT_HOLD g "
+                            + "WHERE IDHOLD = :r", HS_ACCT_HOLD.class)
+                            .setParameter("r", IDHOLD).getResultList();
+    }
+    
+    /*
+        Count HS_ACCT_HOLD Accounts
+    */
+
+    public Long count() throws DAOException {
+        TypedQuery <Long> q= em.createQuery("SELECT COUNT (g) FROM HS_ACCT_HOLD g", Long.class);
+        Long size=(Long) q.getSingleResult();
+        return size;
+    }
 }
