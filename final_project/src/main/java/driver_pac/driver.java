@@ -1,11 +1,18 @@
 package driver_pac;
 
 import java.sql.Timestamp;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
+import entities_1.HS_ACCT;
+import entities_1.HS_ACCT_CUAC;
+import entities_1.HS_ACCT_CUST;
+import entities_1.HS_ACCT_HOLD;
+import entities_1.HS_ACCT_NOTE;
+import entities_1.HS_ACCT_STOP;
+import entities_2.ConsumerInfo;
+import jpa_hibernate.JpaEntityManagerFactory;
 import services_1.impl.HS_ACCT_NOTE_Services_Impl;
 import services_1.impl.HS_ACCT_Services_Impl;
 import services_2.impl.Consumer_Info_Services_Impl;
@@ -14,20 +21,31 @@ import utils.HS_Builder_Impl;
 public class driver {
 
 	public static void main(String[] args) {
-		
-		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ARGOENT_TEST");
-		EntityManagerFactory emf_2 = Persistence.createEntityManagerFactory("TEST_DATA_DB");
-		
+
 		EntityManager em= null;
 		EntityManager em2=null;
 		
 		 HS_Builder_Impl builder= HS_Builder_Impl.getInstance();
+		 User_Interface ui= User_Interface.getInstance();
+		 
+		 Map<DATABASE, Map<DB_INFO,String>> dbsMap= ui.get_the_DBS_INFO();
+		 
+		 Map<DB_INFO,String> hsMap= dbsMap.get(DATABASE.HS_DB);
+		 Map<DB_INFO,String> ciMap= dbsMap.get(DATABASE.CONSUMER_INFO_DB);
+		 
 		 try
 	        {
-	            em = emf.createEntityManager();
-	            em2= emf_2.createEntityManager();
-	            
+
+			 Class[] hs_classes= new Class[] {HS_ACCT.class, HS_ACCT_NOTE.class, HS_ACCT_CUAC.class, 
+					 HS_ACCT_CUST.class, HS_ACCT_HOLD.class, HS_ACCT_STOP.class};
+			 
+			 Class[] ci_classes= new Class[] {ConsumerInfo.class};
+			 
+			 em= new JpaEntityManagerFactory(hs_classes,hsMap.get(DB_INFO.URL), 
+					 hsMap.get(DB_INFO.USERNAME), hsMap.get(DB_INFO.PASSWORD)).getEntityManager(); 
+			 
+			 em2= new JpaEntityManagerFactory(ci_classes,ciMap.get(DB_INFO.URL), 
+					 ciMap.get(DB_INFO.USERNAME), ciMap.get(DB_INFO.PASSWORD)).getEntityManager();   
 	            
 //retrieve from consumer info 
 	            
@@ -108,9 +126,7 @@ public class driver {
 	            {
 	                em2.close();
 	            }
-	            
-	            emf.close();
-	            emf_2.close();
+
 	        }
 	}
 	
