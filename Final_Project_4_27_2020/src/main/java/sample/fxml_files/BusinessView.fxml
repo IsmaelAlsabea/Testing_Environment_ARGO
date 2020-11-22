@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BusinessViewController">
+    <center>
+        <TitledPane animated="false" collapsible="false" text="Business View" BorderPane.alignment="CENTER">
+            <content>
+                <AnchorPane fx:id="businessAnchorPane">
+                    <children>
+                  <GridPane layoutX="25.0" layoutY="20.0" prefHeight="270.0" prefWidth="453.0" AnchorPane.bottomAnchor="20.799999999999955" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.799999999999955" AnchorPane.topAnchor="20.0">
+                    <columnConstraints>
+                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name" textAlignment="CENTER" wrappingWidth="97.56965637207031" />
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year Established" textAlignment="CENTER" wrappingWidth="102.629150390625" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tax ID" textAlignment="CENTER" GridPane.rowIndex="1" />
+                                  <TextField fx:id="companyName" prefWidth="140.0" GridPane.columnIndex="1" />
+                                  <TextField fx:id="yearEstablished" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" />
+                                  <TextField fx:id="taxID" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone" textAlignment="CENTER" GridPane.rowIndex="2" />
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="33.2158203125" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" textAlignment="CENTER" wrappingWidth="52.78955078125" GridPane.rowIndex="3" />
+                                  <TextField fx:id="telephone" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                  <TextField fx:id="email" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                  <TextField fx:id="address" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State" textAlignment="CENTER" wrappingWidth="33.1103515625" GridPane.rowIndex="4" />
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZipCode" textAlignment="CENTER" wrappingWidth="55.83154296875" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <TextField fx:id="city" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                  <ComboBox fx:id="state" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                      <items>
+                                          <FXCollections fx:factory="observableArrayList">
+                                              <String fx:value="Yes" />
+                                              <String fx:value="No" />
+                                          </FXCollections>
+                                      </items>
+                                  </ComboBox>
+                        <TextField fx:id="zipCode" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                  <HBox spacing="20.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                                  </HBox>
+                        <Button mnemonicParsing="false" onAction="#viewAccountsClicked" text="View Accounts" underline="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                                    <Button fx:id="update" mnemonicParsing="false" onAction="#updateButtonClicked" text="Update" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" onAction="#backToSearch" text="Back" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+    </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

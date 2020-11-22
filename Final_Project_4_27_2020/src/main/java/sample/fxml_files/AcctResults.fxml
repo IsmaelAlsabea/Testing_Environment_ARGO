@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AcctResultController">
+   <center>
+      <TitledPane fx:id="acctResultsTitle" animated="false" prefHeight="379.0" prefWidth="600.0" text="Accounts" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane fx:id="acctResultsAnchorPane">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="acctResultsTable" prefHeight="282.0" prefWidth="558.0">
+                           <columns>
+                              <TableColumn fx:id="bankNum" prefWidth="83.99999845027924" text="Bank Num" />
+                              <TableColumn fx:id="branchNum" prefWidth="102.00000762939453" text="Branch Num" />
+                              <TableColumn fx:id="acctType" prefWidth="81.00003051757812" text="Acct Type" />
+                              <TableColumn fx:id="acctNum" prefWidth="100.0" text="Acct Num" />
+                              <TableColumn fx:id="prodCode" prefWidth="92.0" text="Prod Code" />
+                              <TableColumn fx:id="amtCurBal" prefWidth="97.99996948242188" text="Amt Cur Bal" />
+                           </columns>
+                        </TableView>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="back" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" underline="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Button fx:id="viewThisAcct" mnemonicParsing="false" onAction="#viewThisAcct" text="View this Account" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#SearchViewClicked" text="Search" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help" />
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

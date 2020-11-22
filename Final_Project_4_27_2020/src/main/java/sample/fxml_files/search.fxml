@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SearchController">
+   <center>
+      <TitledPane animated="false" collapsible="false" text="Search" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane fx:id="searchAnchorPane" prefHeight="600.0" prefWidth="800.0">
+               <children>
+                  <VBox spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <GridPane hgap="5.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Type" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="31.894180297851562" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin></Text>
+                              <ComboBox fx:id="customerType" prefWidth="140.0" GridPane.columnIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="PER" />
+                                          <String fx:value="BUS" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <TextField fx:id="age" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="state" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="CA" />
+                                          <String fx:value="TX" />
+                                          <String fx:value="LA" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Bureau" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PEP" wrappingWidth="24.2607421875" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="creditBureau" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Equifax" />
+                                          <String fx:value="Experian" />
+                                          <String fx:value="TransUnion" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <ComboBox fx:id="pep" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <TextField fx:id="zipCode" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Online Banking" GridPane.rowIndex="5" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Indicator" GridPane.rowIndex="7" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Special Use" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin></Text>
+                              <ComboBox fx:id="onlineBanking" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <ComboBox fx:id="foreignIndicator" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <ComboBox fx:id="specialUse" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Range" wrappingWidth="87.2376708984375" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin></Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City" GridPane.rowIndex="2" />
+                              <TextField fx:id="name" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <HBox spacing="30.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                 <children>
+                                    <TextField fx:id="creditLow" promptText="Low" />
+                                    <TextField fx:id="creditHigh" promptText="High" />
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="city" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#SearchButtonClicked" text="Search" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button id="expandSelected" mnemonicParsing="false" onAction="#ExpandSelectedButtonClicked" text="Expand Selected" underline="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                              <HBox spacing="20.0" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rows returned:" underline="true">
+                                       <HBox.margin>
+                                          <Insets top="20.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Text fx:id="rowsReturned" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                       <HBox.margin>
+                                          <Insets top="20.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Button id="expandSelected" mnemonicParsing="false" onAction="#clearSearch" text="Clear" underline="true" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mortgage Accounts" GridPane.rowIndex="6" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bankruptcy Records" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin>
+                              </Text>
+                              <ComboBox fx:id="mortgageAccts" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Yes" />
+                                       <String fx:value="No" />
+                                    </FXCollections>
+                                 </items>
+                              </ComboBox>
+                              <ComboBox fx:id="bankruptcyRecords" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Yes" />
+                                       <String fx:value="No" />
+                                    </FXCollections>
+                                 </items>
+                              </ComboBox>
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="resultsTable" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="nameColumn" prefWidth="114.70064544677734" text="Name" />
+                              <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
+                              <TableColumn fx:id="stateColumn" prefWidth="75.0" text="State" />
+                              <TableColumn fx:id="zipCodeColumn" prefWidth="109.73800659179688" text="ZipCode" />
+                              <TableColumn fx:id="creditScoreColumn" prefWidth="89.50454711914062" text="Credit Score" />
+                              <TableColumn fx:id="bureauColumn" prefWidth="118.49557495117188" text="Bureau" />
+                              <TableColumn fx:id="specialUseColumn" prefWidth="132.75750732421875" text="Special Use" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </center>
+   <top>
+   
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+      <Tab text="Search">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <MenuBar>
+                     <menus>
+                        <Menu mnemonicParsing="false" text="View">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Search" />
+                              <MenuItem fx:id="viewPersonButton" mnemonicParsing="false" onAction="#PersonViewClicked" text="Person" />
+                              <MenuItem fx:id="viewBusinessButton" mnemonicParsing="false" onAction="#BusinessViewClicked" text="Business" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  <GridPane prefHeight="330.0" prefWidth="394.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Type" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="31.894180297851562" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State" GridPane.columnIndex="2" />
+                        <ComboBox fx:id="customerType" prefWidth="140.0" GridPane.rowIndex="1">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="PER" />
+                                 <String fx:value="BUS" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <TextField fx:id="age" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="state1" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="CA" />
+                                 <String fx:value="TX" />
+                                 <String fx:value="LA" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Bureau" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PEP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="creditBureau1" prefWidth="140.0" GridPane.rowIndex="3">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Equifax" />
+                                 <String fx:value="Experian" />
+                                 <String fx:value="TransUnion" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox fx:id="pep1" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <TextField fx:id="zipCode1" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Online Banking" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Indicator" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Special Use" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="onlineBanking1" prefWidth="140.0" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox fx:id="foreignIndicator1" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox fx:id="specialUse" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Range" wrappingWidth="87.2376708984375" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <TextField fx:id="name" prefHeight="27.0" prefWidth="140.0" GridPane.rowIndex="7" />
+                        <HBox spacing="30.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                           <children>
+                              <TextField fx:id="creditLow" prefHeight="27.0" prefWidth="52.0" promptText="Low" />
+                              <TextField fx:id="creditHigh" prefHeight="27.0" prefWidth="50.0" promptText="High" />
+                           </children>
+                        </HBox>
+                        <TextField fx:id="city1" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" onAction="#SearchButtonClicked" text="Search" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+    <Tab text="Person View">
+         <content>
+            <VBox>
+               <children>
+                  <MenuBar>
+                     <menus>
+                        <Menu mnemonicParsing="false" text="View">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#SearchViewClicked" text="Search" />
+                              <MenuItem mnemonicParsing="false" text="Person" />
+                              <MenuItem mnemonicParsing="false" onAction="#BusinessViewClicked" text="Business" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help" />
+                     </menus>
+                  </MenuBar>
+                  <GridPane hgap="10.0" vgap="5.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" textAlignment="CENTER" wrappingWidth="74.89418029785156" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Bureau" wrappingWidth="96.5908203125" GridPane.columnIndex="2" />
+                        <TextField fx:id="firstName" prefHeight="27.0" prefWidth="140.0" GridPane.rowIndex="1" />
+                        <TextField fx:id="lastName" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="creditBureau" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="CA" />
+                                 <String fx:value="TX" />
+                                 <String fx:value="LA" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SSN" wrappingWidth="33.2158203125" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Score" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="dateOfBirth" prefHeight="27.0" prefWidth="140.0" GridPane.rowIndex="3" />
+                        <TextField fx:id="ssn" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="creditScore" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Indicator" wrappingWidth="120.78955078125" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PEP" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Online Banking" wrappingWidth="116.83154296875" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="foreignIndicator" prefWidth="140.0" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox fx:id="pep" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox fx:id="onlineBanking" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="87.2376708984375" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <TextField fx:id="telephone1" prefHeight="27.0" prefWidth="140.0" GridPane.rowIndex="7" />
+                        <TextField fx:id="email1" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="address1" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <HBox alignment="BOTTOM_CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                           <children>
+                              <Button fx:id="update1" mnemonicParsing="false" onAction="#UpdateButtonClicked" text="Update" underline="true" />
+                              <Button fx:id="insert1" mnemonicParsing="false" onAction="#InsertButtonClicked" text="Insert" underline="true" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="viewMore" mnemonicParsing="false" text="View More" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </content></Tab>
+    <Tab text="Business View">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <MenuBar>
+                     <menus>
+                        <Menu mnemonicParsing="false" text="View">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#SearchViewClicked" text="Search" />
+                              <MenuItem mnemonicParsing="false" onAction="#PersonViewClicked" text="Person" />
+                              <MenuItem mnemonicParsing="false" text="Business" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  <GridPane prefHeight="270.0" prefWidth="453.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Company Name" textAlignment="CENTER" wrappingWidth="126.56965637207031" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year Established" textAlignment="CENTER" wrappingWidth="115.629150390625" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tax ID" textAlignment="CENTER" GridPane.columnIndex="2" />
+                        <TextField fx:id="companyName" prefWidth="140.0" GridPane.rowIndex="1" />
+                        <TextField fx:id="yearEstablished" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="taxID" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone" textAlignment="CENTER" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="33.2158203125" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" textAlignment="CENTER" wrappingWidth="120.78955078125" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="telephone" prefHeight="27.0" prefWidth="140.0" GridPane.rowIndex="3" />
+                        <TextField fx:id="email" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="address" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City" textAlignment="CENTER" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State" textAlignment="CENTER" wrappingWidth="96.1103515625" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZipCode" textAlignment="CENTER" wrappingWidth="116.83154296875" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="city" prefHeight="27.0" prefWidth="140.0" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="state" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Yes" />
+                                 <String fx:value="No" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <TextField fx:id="zipCode" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <HBox spacing="20.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <children>
+                              <Button fx:id="update" mnemonicParsing="false" onAction="#updateButtonClicked" text="Update" underline="true" />
+                              <Button fx:id="insert" mnemonicParsing="false" onAction="#insertButtonClicked" text="Insert" underline="true" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </content></Tab>
+  </tabs>
+</TabPane>

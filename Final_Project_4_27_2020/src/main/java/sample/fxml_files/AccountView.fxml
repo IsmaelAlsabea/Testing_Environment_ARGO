@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AccountViewController">
+   <center>
+      <TitledPane animated="false" collapsible="false" text="Account" BorderPane.alignment="CENTER">
+         <content>
+            <AnchorPane fx:id="personAnchorPane">
+               <children>
+                  <GridPane hgap="10.0" layoutX="15.0" prefHeight="400.0" prefWidth="600.0" vgap="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name" textAlignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Number" textAlignment="CENTER" wrappingWidth="105.13423156738281" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type" textAlignment="CENTER" wrappingWidth="85.5343017578125" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <TextField fx:id="acctTitle1" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="numAcct" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Product Code" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Status" textAlignment="CENTER" wrappingWidth="94.2158203125" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Balance" textAlignment="CENTER" GridPane.rowIndex="3" />
+                        <TextField fx:id="amtCurBal" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Branch" textAlignment="CENTER" wrappingWidth="45.60514831542969" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Date" textAlignment="CENTER" GridPane.rowIndex="5" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Closed" textAlignment="CENTER" wrappingWidth="77.02801513671875" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Reason Closed" textAlignment="CENTER" wrappingWidth="91.31103515625" GridPane.rowIndex="7" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Begin Date" textAlignment="CENTER" wrappingWidth="67.33592224121094" GridPane.rowIndex="8" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End Date" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <TextField fx:id="reasonClosed" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="dateBegin" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="dateEnd" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" onAction="#backButtonClicked" text="Back" underline="true" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                        <TextField fx:id="typeAcct" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="numBranch" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="dateOpen" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="dateLast" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="dateClosed" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Open" textAlignment="CENTER" wrappingWidth="65.4688491821289" GridPane.rowIndex="6" />
+                        <TextField fx:id="prodCode" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="status2" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button fx:id="update" mnemonicParsing="false" onAction="#UpdateButtonClicked" text="Update" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteRecord" text="Delete Record" underline="true" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#SearchViewClicked" text="Search" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help" />
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
